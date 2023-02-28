@@ -26,14 +26,9 @@ def search(request):
             Q(Sub_Clas2__contains=Busqueda)| 
             Q(Sub_Clas3__contains=Busqueda)| 
             Q(Sub_Clas4__contains=Busqueda)| 
-            Q(Specific__contains=Busqueda)
+            Q(Specific__contains=Busqueda)| 
+            Q(Co_Name__contains=Busqueda)
         )
-        # filter1 = TecMembers.objects.filter(Clas1__contains=Busqueda)
-        # filter2 = TecMembers.objects.filter(Sub_Clas1__contains=Busqueda)
-        # filter3 = TecMembers.objects.filter(Sub_Clas2__contains=Busqueda)
-        # filter4 = TecMembers.objects.filter(Sub_Clas3__contains=Busqueda)
-        # filter5 = TecMembers.objects.filter(Sub_Clas4__contains=Busqueda)
-        # filter6 = TecMembers.objects.filter(Specific__contains=Busqueda)
 
         Context = {
             
