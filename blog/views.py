@@ -13,11 +13,11 @@ def home(request):
     Context = {
         'posts': Q1,
         'lables':{
-            'Hardware': {'Hardware','Aeronoautica','Venta de equipo','Servicios a emprendedores ','Desarrollo Enterprise','Telecomunicaciones','Venta de Software','Ciberseguridad','Geolocalizacion','Comercios','Desarrollo Digital'},
+            'Hardware': {'Hardware','Aeronoautica','Venta de equipo','Servicios a Emprendedores','Desarrollo Enterprise','Telecomunicaciones','Venta de Software','Ciberseguridad','Geolocalizacion','Comercios','Desarrollo Digital'},
             'SaaS': {'Desarrollo Enterprise','Data Analycis','Fintech','Data Base','e-Learning','Venta de Software','Ciberseguridad','Nube','Educativo'},
             'Comercio': {'Comercios','Venta de equipo','Servicios'},
-            'Otras Tecnologias': {'Emprendimiento','IT Administrativo','e-Learning','Bio-Tecnologia','Desarrollo Enterprise','Energia','Hardware','Diseño y Prototipado','Venta de equipo','Telecomunicaciones','Servicios a emprendedores','Tecnologia fianciera','Desarrollo Digital','Servicios','Geolocalizacion','Comercios'},
-            'Digital media': {'Desarrollo Enterprise','Desarrollo Digital','Mercadeo Digital','Multimedia','Servicios a emprendedores ','e-Learning'},
+            'Otras Tecnologias': {'Emprendimiento','IT Administrativo','e-Learning','Bio-Tecnologia','Desarrollo Enterprise','Energia','Hardware','Diseño y Prototipado','Venta de equipo','Telecomunicaciones','Servicios a Emprendedores','Tecnologia fianciera','Desarrollo Digital','Servicios','Geolocalizacion','Comercios','Educativo'},
+            'Digital media': {'Desarrollo Enterprise','Desarrollo Digital','Mercadeo Digital','Multimedia','Servicios a Emprendedores','e-Learning'},
             'Software empresarial': {'Desarrollo Enterprise','Telecomunicaciones','Desarrollo Digital','Data Analycis','Tecnologia fianciera','Fintech','Venta de Software'},
             'Servicios ecosistema': {'Servicios','Salud','Desarrollo Enterprise','Ciberseguridad','Venta de Software','Nube','Desarrollo Digital'}
         }
@@ -34,11 +34,11 @@ def search(request):
         if "," in Busqueda:
              bus1 = Busqueda.split(",")
              queryset = TecMembers.objects.filter(
-                Q(Clas1__contains=bus1[0]) & 
+                Q(Clas1__contains=bus1[0]) & (
                 Q(Sub_Clas1__contains=bus1[1])| 
                 Q(Sub_Clas2__contains=bus1[1])| 
                 Q(Sub_Clas3__contains=bus1[1])| 
-                Q(Sub_Clas4__contains=bus1[1])
+                Q(Sub_Clas4__contains=bus1[1]))
             )
              
         else:
@@ -56,11 +56,11 @@ def search(request):
             
             'posts': queryset,
             'lables':{
-            'Hardware': {'Hardware','Aeronoautica','Venta de equipo','Servicios a emprendedores ','Desarrollo Enterprise','Telecomunicaciones','Venta de Software','Ciberseguridad','Geolocalizacion','Comercios','Desarrollo Digital'},
+            'Hardware': {'Hardware','Aeronoautica','Venta de equipo','Servicios a Emprendedores','Desarrollo Enterprise','Telecomunicaciones','Venta de Software','Ciberseguridad','Geolocalizacion','Comercios','Desarrollo Digital'},
             'SaaS': {'Desarrollo Enterprise','Data Analycis','Fintech','Data Base','e-Learning','Venta de Software','Ciberseguridad','Nube','Educativo'},
             'Comercio': {'Comercios','Venta de equipo','Servicios'},
-            'Otras Tecnologias': {'Emprendimiento','IT Administrativo','e-Learning','Bio-Tecnologia','Desarrollo Enterprise','Energia','Hardware','Diseño y Prototipado','Venta de equipo','Telecomunicaciones','Servicios a emprendedores','Tecnologia fianciera','Desarrollo Digital','Servicios','Geolocalizacion','Comercios'},
-            'Digital media': {'Desarrollo Enterprise','Desarrollo Digital','Mercadeo Digital','Multimedia','Servicios a emprendedores ','e-Learning'},
+            'Otras Tecnologias': {'Emprendimiento','IT Administrativo','e-Learning','Bio-Tecnologia','Desarrollo Enterprise','Energia','Hardware','Diseño y Prototipado','Venta de equipo','Telecomunicaciones','Servicios a Emprendedores','Tecnologia fianciera','Desarrollo Digital','Servicios','Geolocalizacion','Comercios','Educativo'},
+            'Digital media': {'Desarrollo Enterprise','Desarrollo Digital','Mercadeo Digital','Multimedia','Servicios a Emprendedores','e-Learning'},
             'Software empresarial': {'Desarrollo Enterprise','Telecomunicaciones','Desarrollo Digital','Data Analycis','Tecnologia fianciera','Fintech','Venta de Software'},
             'Servicios ecosistema': {'Servicios','Salud','Desarrollo Enterprise','Ciberseguridad','Venta de Software','Nube','Desarrollo Digital'}
         }
