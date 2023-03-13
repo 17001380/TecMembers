@@ -13,13 +13,9 @@ def home(request):
     Context = {
         'posts': Q1,
         'lables':{
-            'Hardware': {'Hardware','Aeronoautica','Venta de equipo','Servicios a Emprendedores','Desarrollo Enterprise','Telecomunicaciones','Venta de Software','Ciberseguridad','Geolocalizacion','Comercios','Desarrollo Digital'},
-            'SaaS': {'Desarrollo Enterprise','Data Analycis','Fintech','Data Base','e-Learning','Venta de Software','Ciberseguridad','Nube','Educativo'},
-            'Comercio': {'Comercios','Venta de equipo','Servicios'},
-            'Otras Tecnologias': {'Emprendimiento','IT Administrativo','e-Learning','Bio-Tecnologia','Desarrollo Enterprise','Energia','Hardware','Diseño y Prototipado','Venta de equipo','Telecomunicaciones','Servicios a Emprendedores','Tecnologia fianciera','Desarrollo Digital','Servicios','Geolocalizacion','Comercios','Educativo'},
-            'Digital media': {'Desarrollo Enterprise','Desarrollo Digital','Mercadeo Digital','Multimedia','Servicios a Emprendedores','e-Learning'},
-            'Software empresarial': {'Desarrollo Enterprise','Telecomunicaciones','Desarrollo Digital','Data Analycis','Tecnologia fianciera','Fintech','Venta de Software'},
-            'Servicios ecosistema': {'Servicios','Salud','Desarrollo Enterprise','Ciberseguridad','Venta de Software','Nube','Desarrollo Digital'}
+            'Soluciones Tecnologicas': {'Bio-Tech','Robotica','Software a la medida','Software empresaliral','Medios digitales','Equipos de computo','Fintech','Electronica','Cyber Seguridad','Data Center','Otras tecnologias'},
+            'Otros Servicios': {'Servicios a ecosistema'},
+            
         }
     }
 
@@ -33,13 +29,7 @@ def search(request):
         Busqueda = request.POST['Busqueda']
         if "," in Busqueda:
              bus1 = Busqueda.split(",")
-             queryset = TecMembers.objects.filter(
-                Q(Clas1__contains=bus1[0]) & (
-                Q(Sub_Clas1__contains=bus1[1])| 
-                Q(Sub_Clas2__contains=bus1[1])| 
-                Q(Sub_Clas3__contains=bus1[1])| 
-                Q(Sub_Clas4__contains=bus1[1]))
-            )
+             queryset = TecMembers.objects.filter(Q(Clas1__contains=bus1[1]))
              
         else:
             queryset = TecMembers.objects.filter(
@@ -56,13 +46,9 @@ def search(request):
             
             'posts': queryset,
             'lables':{
-            'Hardware': {'Hardware','Aeronoautica','Venta de equipo','Servicios a Emprendedores','Desarrollo Enterprise','Telecomunicaciones','Venta de Software','Ciberseguridad','Geolocalizacion','Comercios','Desarrollo Digital'},
-            'SaaS': {'Desarrollo Enterprise','Data Analycis','Fintech','Data Base','e-Learning','Venta de Software','Ciberseguridad','Nube','Educativo'},
-            'Comercio': {'Comercios','Venta de equipo','Servicios'},
-            'Otras Tecnologias': {'Emprendimiento','IT Administrativo','e-Learning','Bio-Tecnologia','Desarrollo Enterprise','Energia','Hardware','Diseño y Prototipado','Venta de equipo','Telecomunicaciones','Servicios a Emprendedores','Tecnologia fianciera','Desarrollo Digital','Servicios','Geolocalizacion','Comercios','Educativo'},
-            'Digital media': {'Desarrollo Enterprise','Desarrollo Digital','Mercadeo Digital','Multimedia','Servicios a Emprendedores','e-Learning'},
-            'Software empresarial': {'Desarrollo Enterprise','Telecomunicaciones','Desarrollo Digital','Data Analycis','Tecnologia fianciera','Fintech','Venta de Software'},
-            'Servicios ecosistema': {'Servicios','Salud','Desarrollo Enterprise','Ciberseguridad','Venta de Software','Nube','Desarrollo Digital'}
+            'Soluciones Tecnologicas': {'Bio-Tech','Robotica','Software a la medida','Software empresaliral','Medios digitales','Equipos de computo','Fintech','Electronica','Cyber Seguridad','Data Center','Servicios de intrnet','Venture Capital','Otras tecnologias'},
+            'Otros Servicios': {'Servicios a ecosistema','Comercio'},
+            
         }
         }
         
