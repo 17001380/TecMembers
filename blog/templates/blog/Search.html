@@ -6,7 +6,7 @@
                 <div class="media-body">
                 <div class="article-metadata">
                     {%if post.Web_Page != 'None'%}
-                        <a class="mr-2" href="{{ post.Web_Page }}">{{ post.Co_Name}}</a>
+                        <a class="mr-2" href="{{ post.Web_Page }}" style="color: darkgreen;">{{ post.Co_Name}}</a>
                     {%endif%}
                     {%if post.Web_Page == 'None'%}
                         <a class="mr-2" href="#">{{ post.Co_Name}}</a>
