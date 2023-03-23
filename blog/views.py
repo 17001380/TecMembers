@@ -13,8 +13,8 @@ def home(request):
     Context = {
         'posts': Q1,
         'lables':{
-            'Soluciones Tecnologicas': {'Bio-Tech','Robotica','Software a la medida','Software empresaliral','Medios digitales','Equipos de computo','Fintech','Electronica','Cyber Seguridad','Data Center','Otras tecnologias'},
-            'Otros Servicios': {'Servicios a ecosistema'},
+            'Soluciones Tecnologicas': {'Bio-Tech','Robotica','Software a la medida','Software empresaliral','Medios digitales','Equipos de computo','Fintech','Electronica','Cyber Seguridad','Data Center','Servicios de internet','Venture Capital','Otras tecnologias'},
+            'Otros Servicios': {'Servicios a ecosistema','Comercio'},
             
         }
     }
@@ -46,7 +46,7 @@ def search(request):
             
             'posts': queryset,
             'lables':{
-            'Soluciones Tecnologicas': {'Bio-Tech','Robotica','Software a la medida','Software empresaliral','Medios digitales','Equipos de computo','Fintech','Electronica','Cyber Seguridad','Data Center','Servicios de intrnet','Venture Capital','Otras tecnologias'},
+            'Soluciones Tecnologicas': {'Bio-Tech','Robotica','Software a la medida','Software empresaliral','Medios digitales','Equipos de computo','Fintech','Electronica','Cyber Seguridad','Data Center','Servicios de internet','Venture Capital','Otras tecnologias'},
             'Otros Servicios': {'Servicios a ecosistema','Comercio'},
             
         }
