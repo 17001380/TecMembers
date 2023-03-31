@@ -6,12 +6,15 @@
         <div class="media-body">
           <div class="article-metadata">
             {%if post.Web_Page != 'None'%}
-                <a class="mr-2" href="{{ post.Web_Page }}" target="_blank" style="color: darkgreen;">{{ post.Co_Name}}</a>
+                <a class="mr-2" href="{{ post.Web_Page }}" target="_blank" style="color: darkgreen;">{{post.Co_Name}} </a>
             {%endif%}
             {%if post.Web_Page == 'None'%}
                 <a class="mr-2" href="#" style="color: darkgreen;">{{ post.Co_Name}}</a>
             {%endif%}
-            <small class="text-muted">{{ post.Clas1 }}</small>
+            <small class="text-muted">{{ post.Clas1 }} | </small>
+            <small class="text-muted">Edificio {{ post.No_tec }} | </small>
+            <small class="text-muted">Oficina {{ post.Office }} | </small>
+            <small class="text-muted" style="text-align: right;">( ID {{ post.id}})</small>
           </div>
           <p class="article-content">{{ post.Specific }}</p>
             {%if post.Web_Page != 'None'%}
